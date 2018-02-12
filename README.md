@@ -15,6 +15,7 @@
 5. That's it, eject the SD card from your computer, put it in your Raspberry Pi Zero and connect it via USB to your computer. It will take up to 90s to boot up (shorter on subsequent boots). It should then appear as a USB Ethernet device. You can SSH into it using  `raspberrypi.local` as the address.
 
 >username: pi
+
 >password: raspberry
 
 
