@@ -1,4 +1,4 @@
-# Raspberry Pi Zero -tips
+# Raspberry Pi Zero - Configuration tips
 
 ## 1. SSH using USB port
 
