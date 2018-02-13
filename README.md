@@ -85,7 +85,7 @@ sudo nano /etc/ssmtp/ssmtp.conf
 ### Test
 
 ```
-echo "Test text" | mailx -s "Test Mail" raspberryorion@gmail.com
+echo "Test text" | mailx -s "Test Mail" your_email@gmail.com
 ```
 ### And then configure mailip file
 ```
