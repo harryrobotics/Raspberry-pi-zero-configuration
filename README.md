@@ -64,15 +64,15 @@ iface wlan0 inet dhcp
 
 ### Install ssmtp
 ```
-sudo apt-get install ssmtp*
+sudo apt-get install ssmtp
 ```
 ### Install mailx
 ```
-sudo apt-get install mailx*
+sudo apt-get install mailx
 ```
 ### Edit ssmtp config file   
 ```
-sudo nano /etc/ssmtp/ssmtp.conf*
+sudo nano /etc/ssmtp/ssmtp.conf
 ``` 
 **Addline**
 ```
