@@ -135,3 +135,29 @@ sudo chmod +x /etc/network/if-up.d/mailip
 
 **finally, reboot**
 ### Reference: https://blog.iamlevi.net/2017/01/send-raspberry-pi-ip-address-gmail-boot/
+
+## 4. Serial Port configuration
+
+### Reference:
+https://spellfoundry.com/2016/05/29/configuring-gpio-serial-port-raspbian-jessie-including-pi-3/
+
+https://www.raspberrypi.org/documentation/configuration/uart.md
+
+**1.	Enable the GPIO serial port:**
+```
+sudo nano /boot/config.txt
+```
+Add the line: `enable_uart=1`
+**2.	If you are using the serial port for anything other than the console you need to disable it.**
+```
+sudo systemctl disable serial-getty@ttyS0.service
+```
+**3.	You also need to remove the console from the `cmdline.txt`. If you edit this with:**
+```
+sudo nano /boot/cmdline.txt
+```
+
+you will see something like: `dwc_otg.lpm_enable=0 console=serial0,115200 console=tty1 root=/dev/mmcblk0p2 rootfstype=ext4 elevator=deadline fsck.repair=yes root wait`
+
+remove the line: `console=serial0,115200` and **save** and **reboot** for changes to take effect.
+
