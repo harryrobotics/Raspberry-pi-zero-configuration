@@ -18,8 +18,49 @@
 
 >password: raspberry
 
+## 2. Connect to Enterprise WPA2 Network (E.g : SUTD network)
 
-## 2. Sends IP to an email
+**Edit the file `wpa_supplicant.conf`**
+```
+sudo nano /etc/wpa_supplicant/wpa_supplicant.conf
+```
+Add the network configuration into wpa_supplicant.conf as follow:
+
+```
+network={
+ssid = “SUTD_Staff”
+key_mgmt=WPA-EAP
+eap=PEAP
+identity=”xxxxxxxx”
+password=”yyyyyyy”
+pairwise=CCMP TKIP
+group=CCMP TKIP
+phase2=”auth=MSCHAPV2”
+}
+```
+**Continue to edit the file `interfaces`**
+```
+sudo nano /etc/network/interfaces
+```
+Add following lines:
+```
+iface lo inet loopback
+iface eth0 inet dhcp
+#address 192.168.1.2
+#gateway 192.168.0.254
+#netmask 255.255.255.0
+auto wlan0
+allow-hotplug wlan0
+iface wlan0 inet dhcp
+        wpa-conf /etc/wpa_supplicant/wpa_supplicant.conf
+#iface default inet static
+#address 192.168.0.110
+#netmask 255.255.255.0
+#gateway 192.168.0.254
+
+#iface default inet dhcp
+```
+## 3. Sends IP to an email
 
 ### Install ssmtp
 ```
