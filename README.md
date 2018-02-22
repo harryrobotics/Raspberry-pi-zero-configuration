@@ -161,3 +161,19 @@ you will see something like: `dwc_otg.lpm_enable=0 console=serial0,115200 consol
 
 remove the line: `console=serial0,115200` and **save** and **reboot** for changes to take effect.
 
+**To switch bluetooth to software UART and set /dev/ttyAM0 to real UART** 
+
+Keep in mind that this one will remain possible software problem on bluetooth (software UART), but not on Serial (Hardware)
+
+Edit the file `/boot/config.txt` and add the following line at the end :
+
+```
+dtoverlay=pi3-miniuart-bt
+core_freq=250
+```
+
+Edit the file `/lib/systemd/system/hciuart.service` and replace  `/dev/ttyAMA0`  with  `/dev/ttyS0`
+
+If you have a system with udev rules that create `/dev/serial0`  and `/dev/serial1` (look if you have these one), and if so use `/dev/serial1 `.
+
+Then **reboot**
