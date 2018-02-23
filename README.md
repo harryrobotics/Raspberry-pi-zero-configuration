@@ -25,7 +25,7 @@
 sudo nano /etc/wpa_supplicant/wpa_supplicant.conf
 ```
 Add the network configuration into wpa_supplicant.conf as follow (becareful of `"` sign):
-**NOTE**: I have an issue when key in the bellow network information. The space and the " sign must be exactly as the one bellow.
+**NOTE**: I have an issue when key in the bellow network information. The space and the `"` sign must be exactly as the one bellow.
 ```
 network={
 ssid="SUTD_Staff"
