@@ -24,18 +24,18 @@
 ```
 sudo nano /etc/wpa_supplicant/wpa_supplicant.conf
 ```
-Add the network configuration into wpa_supplicant.conf as follow:
+Add the network configuration into wpa_supplicant.conf as follow (becareful of `"` sign):
 
 ```
 network={
-ssid = “SUTD_Staff”
+ssid = "SUTD_Staff"
 key_mgmt=WPA-EAP
 eap=PEAP
-identity=”xxxxxxxx”
-password=”yyyyyyy”
+identity="xxxxxxxx"
+password="yyyyyyy"
 pairwise=CCMP TKIP
 group=CCMP TKIP
-phase2=”auth=MSCHAPV2”
+phase2="auth=MSCHAPV2"
 }
 ```
 **Continue to edit the file `interfaces`**
