@@ -161,7 +161,9 @@ you will see something like: `dwc_otg.lpm_enable=0 console=serial0,115200 consol
 
 remove the line: `console=serial0,115200` and **save** and **reboot** for changes to take effect.
 
-**To switch bluetooth to software UART and set /dev/ttyAM0 to real UART** 
+**To switch bluetooth to software UART and set /dev/ttyAM0 to real UART**
+
+In Linux device terms, by default, /dev/ttyS0 refers to the mini UART, and /dev/ttyAMA0 refers to the PL011. The primary UART is that assigned to the Linux console, which depends on the Raspberry Pi model as described above, and can be accessed via /dev/serial0.
 
 Keep in mind that this one will remain possible software problem on bluetooth (software UART), but not on Serial (Hardware)
 
