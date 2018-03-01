@@ -68,7 +68,7 @@ sudo apt-get install ssmtp
 ```
 ### Install mailx
 ```
-sudo apt-get install mailx
+sudo apt-get install bsd-mailx
 ```
 ### Edit ssmtp config file   
 ```
