@@ -18,6 +18,10 @@
 
 >password: raspberry
 
+### To access using vnc-viewer:
+
+https://www.raspberrypi.org/documentation/remote-access/vnc/README.md
+
 ## 2. Connect to Enterprise WPA2 Network (E.g : SUTD network)
 
 **Edit the file `wpa_supplicant.conf`**
