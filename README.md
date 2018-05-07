@@ -183,3 +183,22 @@ Edit the file `/lib/systemd/system/hciuart.service` and replace  `/dev/ttyAMA0` 
 If you have a system with udev rules that create `/dev/serial0`  and `/dev/serial1` (look if you have these one), and if so use `/dev/serial1 `.
 
 Then **reboot**
+
+## Streaming video using netcat and mplayer (Linux)
+
+reference: https://raspberrypi.stackexchange.com/questions/27082/how-to-stream-raspivid-to-linux-and-osx-using-gstreamer-vlc-or-netcat
+Linux (Client)
+```
+$sudo apt-get install mplayer
+```
+```
+$nc -l 2222 | mplayer -fps 200 -demuxer h264es -
+```
+
+Raspberry Pi (Server)
+```
+/opt/vc/bin/raspivid -t 0 -w 300 -h 300 -hf -fps 20 -o - | nc <IP-OF-THE-CLIENT> 2222
+```
+
+
+
