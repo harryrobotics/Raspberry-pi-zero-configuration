@@ -186,22 +186,33 @@ Then **reboot**
 
 ## 5. Video streaming
 ### Camera setup
-1.In command line, type: 
+1.In command line, type:
+
 ```$sudo raspi-config``` 
+
 And then choose Interface Option -> Enable the Camera.
+
 2.Test camera by typing:
+
 ```$raspistill -v -o test.jpg```
+
 The file will be save at root.
 
 ### Streaming video using vlc:
 Host (Raspberry Pi)
+
 1. Install vlc:
+
 ```$sudo apt-get update```
+
 ```$sudo apt-get install vlc```
+
 2. Run stream command:
+
 ```$raspivid -o - -t 0 -hf -w 640 -h 360 -fps 25|cvlc -vvv stream:///dev/stdin --sout '#standard{access=http,mux=ts,dst=:8090}' :demux=h264```
 
 Client (Windows or Linux)
+
 On Window, open VLC -> Media -> Open network stream -> Network, fill in network url: ```http://RaspberryPi-IP:8090/```
 
 ### Streaming video using netcat and mplayer (Linux)
