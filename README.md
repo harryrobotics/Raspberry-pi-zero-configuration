@@ -50,19 +50,10 @@ Add following lines:
 ```
 iface lo inet loopback
 iface eth0 inet dhcp
-#address 192.168.1.2
-#gateway 192.168.0.254
-#netmask 255.255.255.0
 auto wlan0
 allow-hotplug wlan0
 iface wlan0 inet dhcp
         wpa-conf /etc/wpa_supplicant/wpa_supplicant.conf
-#iface default inet static
-#address 192.168.0.110
-#netmask 255.255.255.0
-#gateway 192.168.0.254
-
-#iface default inet dhcp
 ```
 ## 3. Sends IP to an email
 
